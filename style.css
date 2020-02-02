@@ -1,0 +1,15 @@
+html {
+  background: #f8f8f8;
+  font: 100% system-ui, sans-serif;
+}
+
+body > main {
+  background: #fff;
+  border: 1px solid #ddd;
+  margin: 20px;
+  padding: 20px;
+}
+
+h1 {
+  color: #673ab8;
+}
