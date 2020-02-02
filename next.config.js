@@ -11,7 +11,6 @@ module.exports = {
         cacheGroups.preact = Object.assign({}, cacheGroups.framework, {
           test: preactModules
         });
-        // cacheGroups.commons.reuseExistingChunk = true;
         cacheGroups.commons.name = 'framework';
       }
       else {
