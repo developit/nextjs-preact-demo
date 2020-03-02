@@ -1,6 +1,7 @@
 module.exports = {
   experimental: {
-    modern: true
+    modern: true,
+    polyfillsOptimization: true
   },
   webpack(config) {
     const splitChunks = config.optimization && config.optimization.splitChunks
