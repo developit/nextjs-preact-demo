@@ -14,8 +14,19 @@ Clone this repo and run `npm install`:
 git clone git@github.com:developit/nextjs-preact-demo
 cd nextjs-preact-demo
 npm install
+```
 
+There are three commands available:
+
+```sh
+# start a development server:
+npm run dev
+
+# create a production build:
 npm run build
+
+# start a production server:
+npm start
 ```
 
 ## How does it work?
