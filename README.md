@@ -11,7 +11,7 @@ This reduces the base JavaScript weight of pages to 21kB.
 Clone this repo and run `npm install`:
 
 ```sh
-git clone git@github.com:developit/nextjs-preact-demo
+git clone https://github.com/developit/nextjs-preact-demo.git
 cd nextjs-preact-demo
 npm install
 ```
