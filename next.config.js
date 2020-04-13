@@ -23,6 +23,10 @@ module.exports = {
         };
       }
     }
+    
+    // Install webpack aliases:
+    const aliases = config.resolve.alias || (config.resolve.alias = {});
+    aliases.react = aliases['react-dom'] = 'preact/compat';
 
     // inject Preact DevTools
     if (dev && !isServer) {
