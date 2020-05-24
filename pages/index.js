@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 
-export default () => (
+const Home = () => (
   <main>
     <h1>Hello from Preact</h1>
 
@@ -10,3 +10,5 @@ export default () => (
     </Link>
   </main>
 )
+
+export default Home;

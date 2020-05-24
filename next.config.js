@@ -1,10 +1,12 @@
+const prefresh = require('@prefresh/webpack');
+
 module.exports = {
   experimental: {
     modern: true,
     polyfillsOptimization: true
   },
 
-  webpack(config, { dev, isServer }) {
+  webpack(config, { dev, isServer, ...rest }) {
     const splitChunks = config.optimization && config.optimization.splitChunks
     if (splitChunks) {
       const cacheGroups = splitChunks.cacheGroups;
@@ -28,13 +30,20 @@ module.exports = {
     const aliases = config.resolve.alias || (config.resolve.alias = {});
     aliases.react = aliases['react-dom'] = 'preact/compat';
 
-    // inject Preact DevTools
     if (dev && !isServer) {
       const entry = config.entry;
+      // inject Preact DevTools
       config.entry = () => entry().then(entries => {
         entries['main.js'] = ['preact/debug'].concat(entries['main.js'] || []);
         return entries;
       });
+
+      // Inject Prefresh
+      const reactRefresh = config.plugins.find(s => s.constructor.name === 'ReactFreshWebpackPlugin');
+      if (reactRefresh) {
+        config.plugins.splice(config.plugins.indexOf(reactRefresh), 1);
+      }
+      config.plugins.unshift(new prefresh());
     }
 
     return config;
