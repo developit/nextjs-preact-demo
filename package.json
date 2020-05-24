@@ -7,7 +7,8 @@
     "start": "NODE_ENV=production next start"
   },
   "devDependencies": {
-    "@prefresh/webpack": "^0.7.0"
+    "@prefresh/next": "^0.1.0",
+    "react-refresh": "^0.8.3"
   },
   "dependencies": {
     "next": "^9.4.0",

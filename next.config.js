@@ -1,6 +1,6 @@
-const prefresh = require('@prefresh/webpack');
+const withPrefresh = require('@prefresh/next');
 
-module.exports = {
+const config = {
   experimental: {
     modern: true,
     polyfillsOptimization: true
@@ -37,15 +37,10 @@ module.exports = {
         entries['main.js'] = ['preact/debug'].concat(entries['main.js'] || []);
         return entries;
       });
-
-      // Inject Prefresh
-      const reactRefresh = config.plugins.find(s => s.constructor.name === 'ReactFreshWebpackPlugin');
-      if (reactRefresh) {
-        config.plugins.splice(config.plugins.indexOf(reactRefresh), 1);
-      }
-      config.plugins.unshift(new prefresh());
     }
 
     return config;
   }
 };
+
+module.exports = withPrefresh(config);
