@@ -1,4 +1,5 @@
 const withPrefresh = require('@prefresh/next');
+const path = require('path');
 
 const config = {
   experimental: {
@@ -29,12 +30,13 @@ const config = {
     // Install webpack aliases:
     const aliases = config.resolve.alias || (config.resolve.alias = {});
     aliases.react = aliases['react-dom'] = 'preact/compat';
+    aliases.preact = path.resolve(__dirname, 'node_modules', "preact");
 
     if (dev && !isServer) {
       const entry = config.entry;
       // inject Preact DevTools
       config.entry = () => entry().then(entries => {
-        entries['main.js'] = ['preact/debug'].concat(entries['main.js'] || []);
+        //entries['main.js'] = ['preact/devtools'].concat(entries['main.js'] || []);
         return entries;
       });
     }

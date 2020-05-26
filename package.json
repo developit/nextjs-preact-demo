@@ -7,12 +7,12 @@
     "start": "NODE_ENV=production next start"
   },
   "devDependencies": {
-    "@prefresh/next": "^0.1.0",
+    "@prefresh/next": "^0.2.0",
     "react-refresh": "^0.8.3"
   },
   "dependencies": {
     "next": "^9.4.0",
-    "preact": "^10.3.4",
+    "preact": "^10.4.4",
     "preact-render-to-string": "^5.1.4",
     "react": "github:preact-compat/react#1.0.0",
     "react-dom": "github:preact-compat/react-dom#1.0.0",
