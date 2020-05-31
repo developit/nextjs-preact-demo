@@ -36,7 +36,7 @@ const config = {
       const entry = config.entry;
       // inject Preact DevTools
       config.entry = () => entry().then(entries => {
-        //entries['main.js'] = ['preact/devtools'].concat(entries['main.js'] || []);
+        entries['main.js'] = ['preact/debug'].concat(entries['main.js'] || []);
         return entries;
       });
     }

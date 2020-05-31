@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 
 const Home = () => {
-  const [state, setState] = React.useState(5)
+  const [state, setState] = React.useState(10)
   return (
     <main>
       <h1>Hello from Preact</h1>
