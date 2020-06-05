@@ -30,9 +30,9 @@ const config = {
     const aliases = config.resolve.alias || (config.resolve.alias = {});
     aliases.react = aliases['react-dom'] = 'preact/compat';
 
+    // inject Preact DevTools
     if (dev && !isServer) {
       const entry = config.entry;
-      // inject Preact DevTools
       config.entry = () => entry().then(entries => {
         entries['main.js'] = ['preact/debug'].concat(entries['main.js'] || []);
         return entries;
