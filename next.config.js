@@ -1,5 +1,4 @@
 const withPrefresh = require('@prefresh/next');
-const path = require('path');
 
 const config = {
   experimental: {
@@ -7,7 +6,7 @@ const config = {
     polyfillsOptimization: true
   },
 
-  webpack(config, { dev, isServer, ...rest }) {
+  webpack(config, { dev, isServer }) {
     const splitChunks = config.optimization && config.optimization.splitChunks
     if (splitChunks) {
       const cacheGroups = splitChunks.cacheGroups;
@@ -30,7 +29,6 @@ const config = {
     // Install webpack aliases:
     const aliases = config.resolve.alias || (config.resolve.alias = {});
     aliases.react = aliases['react-dom'] = 'preact/compat';
-    aliases.preact = path.resolve(__dirname, 'node_modules', "preact");
 
     if (dev && !isServer) {
       const entry = config.entry;
