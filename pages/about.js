@@ -1,8 +1,9 @@
 import React from 'react'
 
-export default () => (
+const About = () => (
   <main>
     <h1>About us</h1>
   </main>
 );
 
+export default About;

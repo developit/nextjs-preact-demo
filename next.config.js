@@ -1,4 +1,6 @@
-module.exports = {
+const withPrefresh = require('@prefresh/next');
+
+const config = {
   experimental: {
     modern: true,
     polyfillsOptimization: true
@@ -40,3 +42,5 @@ module.exports = {
     return config;
   }
 };
+
+module.exports = withPrefresh(config);
