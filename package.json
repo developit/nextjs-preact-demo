@@ -4,19 +4,19 @@
   "scripts": {
     "dev": "next",
     "build": "next build && next export -o build",
-    "start": "NODE_ENV=production next start"
+    "start": "cross-env NODE_ENV=production next start"
   },
   "devDependencies": {
-    "@prefresh/next": "^0.3.0",
+    "@prefresh/next": "^1.2.4",
+    "cross-env": "^7.0.2",
     "react-refresh": "^0.8.3"
   },
   "dependencies": {
-    "next": "^9.4.0",
-    "preact": "^10.4.4",
-    "preact-render-to-string": "^5.1.4",
-    "react": "github:preact-compat/react#1.0.0",
-    "react-dom": "github:preact-compat/react-dom#1.0.0",
-    "react-ssr-prepass": "npm:preact-ssr-prepass@^1.0.1"
+    "next": "^9.5.3",
+    "preact": "^10.5.3",
+    "preact-render-to-string": "^5.1.10",
+    "react": "npm:@preact/compat@^0.0.3",
+    "react-dom": "npm:@preact/compat@^0.0.3"
   },
   "license": "UNLICENSE"
 }
