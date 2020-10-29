@@ -4,7 +4,6 @@ const preact = require('preact');
 const config = {
   experimental: {
     modern: true,
-    polyfillsOptimization: true
   },
 
   webpack(config, { dev, isServer }) {
