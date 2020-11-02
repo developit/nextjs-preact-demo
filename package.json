@@ -2,20 +2,21 @@
   "name": "nextjs-preact-demo",
   "version": "1.0.0",
   "scripts": {
-    "dev": "next",
-    "build": "next build && next export -o build",
+    "dev": "cross-env NODE_ENV=development next",
+    "build:ssg": "cross-env NODE_ENV=production next build && next export -o build",
+    "build:ssr": "cross-env NODE_ENV=production next build",
     "start": "cross-env NODE_ENV=production next start"
   },
   "devDependencies": {
-    "@prefresh/next": "^1.3.0",
     "cross-env": "^7.0.2"
   },
   "dependencies": {
-    "next": "^9.5.5",
-    "preact": "^10.5.4",
-    "preact-render-to-string": "^5.1.10",
-    "react": "npm:@preact/compat@^0.0.3",
-    "react-dom": "npm:@preact/compat@^0.0.3",
+    "next": "10.0.0",
+    "next-plugin-preact": "^3.0.3",
+    "preact": "^10.5.5",
+    "preact-render-to-string": "^5.1.11",
+    "react": "npm:@preact/compat@0.0.3",
+    "react-dom": "npm:@preact/compat@0.0.3",
     "react-ssr-prepass": "npm:preact-ssr-prepass@^1.1.2"
   },
   "license": "UNLICENSED"
